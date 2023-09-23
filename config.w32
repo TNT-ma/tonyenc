@@ -1,0 +1,7 @@
+ARG_ENABLE('tonyenc', 'tonyenc support', 'no');
+
+if (PHP_TONYENC != 'no') {
+	AC_DEFINE('HAVE_TONYENC', 1, 'tonyenc support enabled');
+
+	EXTENSION('tonyenc', 'tonyenc.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
